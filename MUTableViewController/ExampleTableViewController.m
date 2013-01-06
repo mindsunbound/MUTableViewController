@@ -2,8 +2,8 @@
 //  ExampleTableViewController.m
 //  MUTableViewController
 //
-//  Created by Jonah G. Neugass on 11/28/12.
-//
+//  Created by Jonah Neugass on 1/6/13.
+//  Copyright (c) 2013 Minds Unbound. All rights reserved.
 //
 
 #import "ExampleTableViewController.h"
