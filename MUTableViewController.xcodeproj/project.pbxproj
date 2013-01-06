@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A6DF254A1AA459194CC9046 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B70F3266B8604E8DAEA94902 /* libPods.a */; };
+		8C2DE7581699F7F800B65A16 /* ExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DE7571699F7F800B65A16 /* ExampleTableViewController.m */; };
+		8C2DE75B1699F86600B65A16 /* ExampleDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DE75A1699F86500B65A16 /* ExampleDataModel.m */; };
+		8C2DE765169A029600B65A16 /* 23-bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2DE75E169A029600B65A16 /* 23-bird.png */; };
+		8C2DE76D169A040D00B65A16 /* ColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2DE76C169A040D00B65A16 /* ColorViewController.m */; };
+		8CFA704E1697D56900B0F6DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA704D1697D56900B0F6DF /* UIKit.framework */; };
+		8CFA70501697D56900B0F6DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA704F1697D56900B0F6DF /* Foundation.framework */; };
+		8CFA70521697D56900B0F6DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFA70511697D56900B0F6DF /* CoreGraphics.framework */; };
+		8CFA70581697D56900B0F6DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA70561697D56900B0F6DF /* InfoPlist.strings */; };
+		8CFA705A1697D56900B0F6DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA70591697D56900B0F6DF /* main.m */; };
+		8CFA705E1697D56900B0F6DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA705D1697D56900B0F6DF /* AppDelegate.m */; };
+		8CFA70601697D56900B0F6DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA705F1697D56900B0F6DF /* Default.png */; };
+		8CFA70621697D56900B0F6DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA70611697D56900B0F6DF /* Default@2x.png */; };
+		8CFA70641697D56900B0F6DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA70631697D56900B0F6DF /* Default-568h@2x.png */; };
+		8CFA70671697D56900B0F6DF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA70651697D56900B0F6DF /* MainStoryboard.storyboard */; };
+		8CFA707E1697DB2A00B0F6DF /* MUDataModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA70751697DB2A00B0F6DF /* MUDataModelBase.m */; };
+		8CFA707F1697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA70771697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.m */; };
+		8CFA70801697DB2A00B0F6DF /* MUTableViewDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA70791697DB2A00B0F6DF /* MUTableViewDataObject.m */; };
+		8CFA70811697DB2A00B0F6DF /* MUTableDataDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA707B1697DB2A00B0F6DF /* MUTableDataDisplayCell.m */; };
+		8CFA70821697DB2A00B0F6DF /* MUTableDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA707D1697DB2A00B0F6DF /* MUTableDataModel.m */; };
+		8CFA70871697DD7500B0F6DF /* MUSquareBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA70861697DD7500B0F6DF /* MUSquareBadgeView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8C2DE7561699F7F800B65A16 /* ExampleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewController.h; sourceTree = "<group>"; };
+		8C2DE7571699F7F800B65A16 /* ExampleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewController.m; sourceTree = "<group>"; };
+		8C2DE7591699F86500B65A16 /* ExampleDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDataModel.h; sourceTree = "<group>"; };
+		8C2DE75A1699F86500B65A16 /* ExampleDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDataModel.m; sourceTree = "<group>"; };
+		8C2DE75E169A029600B65A16 /* 23-bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "23-bird.png"; sourceTree = "<group>"; };
+		8C2DE76B169A040D00B65A16 /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
+		8C2DE76C169A040D00B65A16 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
+		8CFA704A1697D56900B0F6DF /* MUTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CFA704D1697D56900B0F6DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8CFA704F1697D56900B0F6DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CFA70511697D56900B0F6DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CFA70551697D56900B0F6DF /* MUTableViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MUTableViewController-Info.plist"; sourceTree = "<group>"; };
+		8CFA70571697D56900B0F6DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8CFA70591697D56900B0F6DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CFA705B1697D56900B0F6DF /* MUTableViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUTableViewController-Prefix.pch"; sourceTree = "<group>"; };
+		8CFA705C1697D56900B0F6DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CFA705D1697D56900B0F6DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CFA705F1697D56900B0F6DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8CFA70611697D56900B0F6DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8CFA70631697D56900B0F6DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8CFA70661697D56900B0F6DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		8CFA70741697DB2A00B0F6DF /* MUDataModelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUDataModelBase.h; path = Classes/MUDataModelBase.h; sourceTree = "<group>"; };
+		8CFA70751697DB2A00B0F6DF /* MUDataModelBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MUDataModelBase.m; path = Classes/MUDataModelBase.m; sourceTree = "<group>"; };
+		8CFA70761697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUDataModelEnabledTableViewController.h; path = Classes/MUDataModelEnabledTableViewController.h; sourceTree = "<group>"; };
+		8CFA70771697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MUDataModelEnabledTableViewController.m; path = Classes/MUDataModelEnabledTableViewController.m; sourceTree = "<group>"; };
+		8CFA70781697DB2A00B0F6DF /* MUTableViewDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUTableViewDataObject.h; path = Classes/MUTableViewDataObject.h; sourceTree = "<group>"; };
+		8CFA70791697DB2A00B0F6DF /* MUTableViewDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MUTableViewDataObject.m; path = Classes/MUTableViewDataObject.m; sourceTree = "<group>"; };
+		8CFA707A1697DB2A00B0F6DF /* MUTableDataDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUTableDataDisplayCell.h; path = Classes/MUTableDataDisplayCell.h; sourceTree = "<group>"; };
+		8CFA707B1697DB2A00B0F6DF /* MUTableDataDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MUTableDataDisplayCell.m; path = Classes/MUTableDataDisplayCell.m; sourceTree = "<group>"; };
+		8CFA707C1697DB2A00B0F6DF /* MUTableDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUTableDataModel.h; path = Classes/MUTableDataModel.h; sourceTree = "<group>"; };
+		8CFA707D1697DB2A00B0F6DF /* MUTableDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MUTableDataModel.m; path = Classes/MUTableDataModel.m; sourceTree = "<group>"; };
+		8CFA70831697DBDB00B0F6DF /* MUTableViewDataModeling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUTableViewDataModeling.h; path = Classes/MUTableViewDataModeling.h; sourceTree = "<group>"; };
+		8CFA70841697DC2000B0F6DF /* MUConfigurableTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUConfigurableTableCell.h; path = Classes/MUConfigurableTableCell.h; sourceTree = "<group>"; };
+		8CFA70851697DD7500B0F6DF /* MUSquareBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUSquareBadgeView.h; path = Classes/MUSquareBadgeView.h; sourceTree = "<group>"; };
+		8CFA70861697DD7500B0F6DF /* MUSquareBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MUSquareBadgeView.m; path = Classes/MUSquareBadgeView.m; sourceTree = "<group>"; };
+		A3F2B646740A44D29F1CCA2F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		B70F3266B8604E8DAEA94902 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CFA70471697D56900B0F6DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFA704E1697D56900B0F6DF /* UIKit.framework in Frameworks */,
+				8CFA70501697D56900B0F6DF /* Foundation.framework in Frameworks */,
+				8CFA70521697D56900B0F6DF /* CoreGraphics.framework in Frameworks */,
+				1A6DF254A1AA459194CC9046 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C2DE75C169A029600B65A16 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8C2DE75E169A029600B65A16 /* 23-bird.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8CFA70411697D56900B0F6DF = {
+			isa = PBXGroup;
+			children = (
+				8CFA70531697D56900B0F6DF /* MUTableViewController */,
+				8CFA704C1697D56900B0F6DF /* Frameworks */,
+				8CFA704B1697D56900B0F6DF /* Products */,
+				A3F2B646740A44D29F1CCA2F /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8CFA704B1697D56900B0F6DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA704A1697D56900B0F6DF /* MUTableViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CFA704C1697D56900B0F6DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA704D1697D56900B0F6DF /* UIKit.framework */,
+				8CFA704F1697D56900B0F6DF /* Foundation.framework */,
+				8CFA70511697D56900B0F6DF /* CoreGraphics.framework */,
+				B70F3266B8604E8DAEA94902 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CFA70531697D56900B0F6DF /* MUTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA70731697D5F400B0F6DF /* Classes */,
+				8CFA705C1697D56900B0F6DF /* AppDelegate.h */,
+				8CFA705D1697D56900B0F6DF /* AppDelegate.m */,
+				8CFA70651697D56900B0F6DF /* MainStoryboard.storyboard */,
+				8C2DE7561699F7F800B65A16 /* ExampleTableViewController.h */,
+				8C2DE7571699F7F800B65A16 /* ExampleTableViewController.m */,
+				8C2DE76B169A040D00B65A16 /* ColorViewController.h */,
+				8C2DE76C169A040D00B65A16 /* ColorViewController.m */,
+				8C2DE7591699F86500B65A16 /* ExampleDataModel.h */,
+				8C2DE75A1699F86500B65A16 /* ExampleDataModel.m */,
+				8C2DE75C169A029600B65A16 /* Images */,
+				8CFA70541697D56900B0F6DF /* Supporting Files */,
+			);
+			path = MUTableViewController;
+			sourceTree = "<group>";
+		};
+		8CFA70541697D56900B0F6DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA70551697D56900B0F6DF /* MUTableViewController-Info.plist */,
+				8CFA70561697D56900B0F6DF /* InfoPlist.strings */,
+				8CFA70591697D56900B0F6DF /* main.m */,
+				8CFA705B1697D56900B0F6DF /* MUTableViewController-Prefix.pch */,
+				8CFA705F1697D56900B0F6DF /* Default.png */,
+				8CFA70611697D56900B0F6DF /* Default@2x.png */,
+				8CFA70631697D56900B0F6DF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CFA70731697D5F400B0F6DF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA70851697DD7500B0F6DF /* MUSquareBadgeView.h */,
+				8CFA70861697DD7500B0F6DF /* MUSquareBadgeView.m */,
+				8CFA70841697DC2000B0F6DF /* MUConfigurableTableCell.h */,
+				8CFA70831697DBDB00B0F6DF /* MUTableViewDataModeling.h */,
+				8CFA70741697DB2A00B0F6DF /* MUDataModelBase.h */,
+				8CFA70751697DB2A00B0F6DF /* MUDataModelBase.m */,
+				8CFA70761697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.h */,
+				8CFA70771697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.m */,
+				8CFA70781697DB2A00B0F6DF /* MUTableViewDataObject.h */,
+				8CFA70791697DB2A00B0F6DF /* MUTableViewDataObject.m */,
+				8CFA707A1697DB2A00B0F6DF /* MUTableDataDisplayCell.h */,
+				8CFA707B1697DB2A00B0F6DF /* MUTableDataDisplayCell.m */,
+				8CFA707C1697DB2A00B0F6DF /* MUTableDataModel.h */,
+				8CFA707D1697DB2A00B0F6DF /* MUTableDataModel.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CFA70491697D56900B0F6DF /* MUTableViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CFA70701697D56900B0F6DF /* Build configuration list for PBXNativeTarget "MUTableViewController" */;
+			buildPhases = (
+				8CFA70461697D56900B0F6DF /* Sources */,
+				8CFA70471697D56900B0F6DF /* Frameworks */,
+				8CFA70481697D56900B0F6DF /* Resources */,
+				A61935BED78449318C58EC46 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MUTableViewController;
+			productName = MUTableViewController;
+			productReference = 8CFA704A1697D56900B0F6DF /* MUTableViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CFA70421697D56900B0F6DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Minds Unbound";
+			};
+			buildConfigurationList = 8CFA70451697D56900B0F6DF /* Build configuration list for PBXProject "MUTableViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8CFA70411697D56900B0F6DF;
+			productRefGroup = 8CFA704B1697D56900B0F6DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CFA70491697D56900B0F6DF /* MUTableViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CFA70481697D56900B0F6DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFA70581697D56900B0F6DF /* InfoPlist.strings in Resources */,
+				8CFA70601697D56900B0F6DF /* Default.png in Resources */,
+				8CFA70621697D56900B0F6DF /* Default@2x.png in Resources */,
+				8CFA70641697D56900B0F6DF /* Default-568h@2x.png in Resources */,
+				8CFA70671697D56900B0F6DF /* MainStoryboard.storyboard in Resources */,
+				8C2DE765169A029600B65A16 /* 23-bird.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A61935BED78449318C58EC46 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CFA70461697D56900B0F6DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFA705A1697D56900B0F6DF /* main.m in Sources */,
+				8CFA705E1697D56900B0F6DF /* AppDelegate.m in Sources */,
+				8CFA707E1697DB2A00B0F6DF /* MUDataModelBase.m in Sources */,
+				8CFA707F1697DB2A00B0F6DF /* MUDataModelEnabledTableViewController.m in Sources */,
+				8CFA70801697DB2A00B0F6DF /* MUTableViewDataObject.m in Sources */,
+				8CFA70811697DB2A00B0F6DF /* MUTableDataDisplayCell.m in Sources */,
+				8CFA70821697DB2A00B0F6DF /* MUTableDataModel.m in Sources */,
+				8CFA70871697DD7500B0F6DF /* MUSquareBadgeView.m in Sources */,
+				8C2DE7581699F7F800B65A16 /* ExampleTableViewController.m in Sources */,
+				8C2DE75B1699F86600B65A16 /* ExampleDataModel.m in Sources */,
+				8C2DE76D169A040D00B65A16 /* ColorViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8CFA70561697D56900B0F6DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CFA70571697D56900B0F6DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8CFA70651697D56900B0F6DF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CFA70661697D56900B0F6DF /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CFA706E1697D56900B0F6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8CFA706F1697D56900B0F6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CFA70711697D56900B0F6DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F2B646740A44D29F1CCA2F /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUTableViewController/MUTableViewController-Prefix.pch";
+				INFOPLIST_FILE = "MUTableViewController/MUTableViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8CFA70721697D56900B0F6DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F2B646740A44D29F1CCA2F /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MUTableViewController/MUTableViewController-Prefix.pch";
+				INFOPLIST_FILE = "MUTableViewController/MUTableViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CFA70451697D56900B0F6DF /* Build configuration list for PBXProject "MUTableViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFA706E1697D56900B0F6DF /* Debug */,
+				8CFA706F1697D56900B0F6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CFA70701697D56900B0F6DF /* Build configuration list for PBXNativeTarget "MUTableViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFA70711697D56900B0F6DF /* Debug */,
+				8CFA70721697D56900B0F6DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CFA70421697D56900B0F6DF /* Project object */;
+}
