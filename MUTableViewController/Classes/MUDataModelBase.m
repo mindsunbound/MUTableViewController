@@ -15,20 +15,21 @@
     self = [super init];
     if( self != nil )
     {
+        self.dictionaryQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         self.dataDictionary = [[NSMutableDictionary alloc] init];
         self.headerDictionary = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
+
 -(id)objectForRowAtIndexPath:(NSIndexPath *)inIndexPath
 {
-    UIView *returnObject = nil;
-    @synchronized(self.dataDictionary)
-    {
+    __block UIView *returnObject = nil;
+    dispatch_sync(self.dictionaryQueue, ^{
         NSArray *array = self.dataDictionary[@(inIndexPath.section)];
         @try
-        {            
+        {
             if( array != nil && inIndexPath.row < array.count )
             {
                 returnObject = array[inIndexPath.row];
@@ -36,10 +37,10 @@
         }
         @catch (NSException *exception)
         {
-           
+            
         }
         
-    }
+    });
     return returnObject;
 }
 
@@ -55,43 +56,44 @@
 
 -(NSInteger)numberOfRowsInSection:(NSInteger)inSection
 {
-    @synchronized(self.dataDictionary)
-    {
+    __block NSInteger returnCount;
+    dispatch_sync(self.dictionaryQueue, ^{
         NSArray *array = self.dataDictionary[@(inSection)];
-        //DDLogInfo(@"Number or rows in section:%d", array.count);
-        return array.count;
-    }
+        returnCount = array.count;
+    });
+    return returnCount;
 }
 
 -(NSInteger)numberOfSections
 {
-    @synchronized(self.dataDictionary)
-    {
-        // DDLogInfo(@"Number or rows in section:%d", [self.dataDictionary allKeys].count);
-        return [self.dataDictionary allKeys].count;
-    }
+    __block NSInteger returnCount;
+    dispatch_sync(self.dictionaryQueue, ^{
+        returnCount = [self.dataDictionary allKeys].count;
+    });
+    return returnCount;
 }
 
 -(void)setDataDictionary:(NSMutableDictionary *)dataDictionary
 {
-    @synchronized(_dataDictionary)
-    {
-        if( self.dataDictionary == nil )
+    __weak MUDataModelBase *bSelf = self;
+    dispatch_async(self.dictionaryQueue, ^{
+        __strong MUDataModelBase *sSelf = bSelf;
+        if( sSelf.dataDictionary == nil )
         {
-            _dataDictionary = [[NSMutableDictionary alloc] init];
+            sSelf->_dataDictionary = [[NSMutableDictionary alloc] init];
         }
         
-        [_dataDictionary setDictionary:dataDictionary];
-    }
+        [sSelf->_dataDictionary setDictionary:dataDictionary];
+    });
 }
 
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath
 {
-    @synchronized(self.dataDictionary)
-    {
-        NSMutableArray *objectArray = self.dataDictionary[@(inIndexPath.section)];
+    __weak MUDataModelBase *bSelf = self;
+    dispatch_async(self.dictionaryQueue, ^{
+        NSMutableArray *objectArray = bSelf.dataDictionary[@(inIndexPath.section)];
         [objectArray removeObjectAtIndex:inIndexPath.row];
-    }
+    });
 }
 
 -(NSString *)titleForSection:(NSInteger)inSection

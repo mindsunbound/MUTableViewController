@@ -11,8 +11,9 @@
 
 @interface MUDataModelBase : NSObject<MUTableViewDataModeling>
 
-@property(nonatomic, strong, readonly) NSMutableDictionary *dataDictionary;
-@property(nonatomic, strong) NSMutableDictionary *headerDictionary;
+@property (strong, nonatomic, readonly) NSMutableDictionary *dataDictionary;
+@property (strong, nonatomic) NSMutableDictionary *headerDictionary;
+@property (strong, nonatomic) dispatch_queue_t dictionaryQueue;
 
 @property (strong, nonatomic) MUAnonymousBlock selectionStartBlock;
 @property (strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
