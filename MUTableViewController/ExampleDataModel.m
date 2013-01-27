@@ -71,15 +71,9 @@
     [dataObjectArray addObject:dataObject];
     
     dataObjectDictionary[@(1)] = dataObjectArray;
-    
-    
-    
-    @synchronized(self.dataDictionary)
-    {
-        [self willChangeValueForKey:@"dataDictionary"];
-        [self.dataDictionary setDictionary:dataObjectDictionary];
-        [self didChangeValueForKey:@"dataDictionary"];
-    }
+        
+    self.dataDictionary = dataObjectDictionary;
+
 }
 
 

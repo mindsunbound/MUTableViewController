@@ -15,9 +15,9 @@
     self = [super init];
     if( self != nil )
     {
-        self.dictionaryQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        self.dataDictionary = [[NSMutableDictionary alloc] init];
-        self.headerDictionary = [[NSMutableDictionary alloc] init];
+        _dictionaryQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        _dataDictionary = [[NSMutableDictionary alloc] init];
+        _headerDictionary = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -25,7 +25,7 @@
 
 -(id)objectForRowAtIndexPath:(NSIndexPath *)inIndexPath
 {
-    __block UIView *returnObject = nil;
+    __block id returnObject = nil;
     dispatch_sync(self.dictionaryQueue, ^{
         NSArray *array = self.dataDictionary[@(inIndexPath.section)];
         @try
@@ -82,8 +82,9 @@
         {
             sSelf->_dataDictionary = [[NSMutableDictionary alloc] init];
         }
-        
+        [self willChangeValueForKey:@"dataDictionary"];
         [sSelf->_dataDictionary setDictionary:dataDictionary];
+        [self didChangeValueForKey:@"dataDictionary"];
     });
 }
 
