@@ -8,6 +8,8 @@
 
 #import "MUDataModelBase.h"
 
+#define PERFORM_COLOR_SEGUE_NOTIFICATION @"performSegueNotification"
+
 @interface ExampleDataModel : MUDataModelBase
 
 @end

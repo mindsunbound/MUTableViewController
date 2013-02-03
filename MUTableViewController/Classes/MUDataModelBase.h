@@ -8,16 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "MUTableViewDataModeling.h"
+#import "MUDefines.h"
 
 @interface MUDataModelBase : NSObject<MUTableViewDataModeling>
 
-@property (strong, nonatomic, readonly) NSMutableDictionary *dataDictionary;
-@property (strong, nonatomic) NSMutableDictionary *headerDictionary;
-@property (strong, nonatomic) dispatch_queue_t dictionaryQueue;
+@property(strong, nonatomic, readonly) NSMutableDictionary *dataDictionary;
+@property(strong, nonatomic) NSMutableDictionary *headerDictionary;
+@property(strong, nonatomic) dispatch_queue_t dictionaryQueue;
 
-@property (strong, nonatomic) MUAnonymousBlock selectionStartBlock;
-@property (strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
-@property (strong, nonatomic) MUAnonymousBlock selectionErrorBlock;
+@property(strong, nonatomic) MUAnonymousBlock selectionStartBlock;
+@property(strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
+@property(strong, nonatomic) MUAnonymousBlock selectionErrorBlock;
 
 -(void)setDataDictionary:(NSMutableDictionary *)dataDictionary;
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath;

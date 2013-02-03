@@ -11,7 +11,4 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    typedef void (^MUAnonymousBlock)();
-    #define EMPTY_STRING @""
-    #define PERFORM_COLOR_SEGUE_NOTIFICATION @"performSegueNotification"
 #endif

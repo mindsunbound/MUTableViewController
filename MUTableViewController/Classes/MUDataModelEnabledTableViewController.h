@@ -17,9 +17,9 @@
         MUDataModelBase *_dataModel;
 }
 
-@property (strong, nonatomic, readonly) MUDataModelBase *dataModel;
-@property (strong, nonatomic) IBOutlet UIImageView *headerImageView;
-@property (strong, nonatomic, readonly) NSMutableDictionary *subscribedKeypaths;
+@property(strong, nonatomic, readonly) MUDataModelBase *dataModel;
+@property(strong, nonatomic) IBOutlet UIImageView *headerImageView;
+@property(strong, nonatomic, readonly) NSMutableDictionary *subscribedKeypaths;
 
 -(void)observeWithKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options;
 

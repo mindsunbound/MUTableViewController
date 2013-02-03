@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MUDefines.h"
 
 @interface MUTableViewDataObject : NSObject
 
-@property(nonatomic, strong) NSString *cellClassName;
-@property(nonatomic, strong) NSString *storyBoardIdentifier;
-@property(nonatomic, strong) NSString *nibName;
-@property(nonatomic, strong) id modelObject;
-@property(nonatomic, strong) MUAnonymousBlock selectionBlock;
+@property(strong, nonatomic) NSString *cellClassName;
+@property(strong, nonatomic) NSString *storyBoardIdentifier;
+@property(strong, nonatomic) NSString *nibName;
+@property(strong, nonatomic) id modelObject;
+@property(strong, nonatomic) MUAnonymousBlock selectionBlock;
 @property(nonatomic) NSInteger cellHeight;
 -(id)initWithModel:(id)inModel andSelectionBlock:(MUAnonymousBlock)inSelectionBlock;
 @end

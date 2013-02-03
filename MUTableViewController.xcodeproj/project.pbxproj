@@ -38,6 +38,7 @@
 		8C2DE75E169A029600B65A16 /* 23-bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "23-bird.png"; sourceTree = "<group>"; };
 		8C2DE76B169A040D00B65A16 /* ColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorViewController.h; sourceTree = "<group>"; };
 		8C2DE76C169A040D00B65A16 /* ColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorViewController.m; sourceTree = "<group>"; };
+		8C7DF87F16BE135A004ADAF9 /* MUDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MUDefines.h; path = Classes/MUDefines.h; sourceTree = "<group>"; };
 		8CFA704A1697D56900B0F6DF /* MUTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFA704D1697D56900B0F6DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8CFA704F1697D56900B0F6DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +173,7 @@
 				8CFA707B1697DB2A00B0F6DF /* MUTableDataDisplayCell.m */,
 				8CFA707C1697DB2A00B0F6DF /* MUTableDataModel.h */,
 				8CFA707D1697DB2A00B0F6DF /* MUTableDataModel.m */,
+				8C7DF87F16BE135A004ADAF9 /* MUDefines.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
