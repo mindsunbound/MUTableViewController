@@ -7,65 +7,16 @@
 # For details see: https://github.com/CocoaPods/CocoaPods/wiki/The-podspec-format
 #
 Pod::Spec.new do |s|
-  s.name         = "MUTableViewController"
-  s.version      = "1.0.0"
-#  s.summary      = "MUTableViewController is a set of classes that helps separate model logic from view logic and gets rid of some of the tedium from dealing with table views by doing the work for you."
-  s.summary      =  "MUTableViewController is a set of classes that helps separate model logic from view logic."
-  #                   An optional longer description of MUTableViewController
-  #
-  #                   * Markdown format.
-  #                   * Don't worry about the indent, we strip it!
-  #                  DESC
-  s.homepage     = "https://github.com/mindsunbound/MUTableViewController"
-
-  # Specify the license type. CocoaPods detects automatically the license file if it is named
-  # `LICENSE*.*', however if the name is different, specify it.
-  s.license      = 'MIT (example)'
-  # s.license      = { :type => 'MIT (example)', :file => 'FILE_LICENSE' }
-  #
-  # Only if no dedicated file is available include the full text of the license.
-  #
-  # s.license      = {
-  #   :type => 'MIT (example)',
-  #   :text => <<-LICENSE
-  #             Copyright (C) <year> <copyright holders>
-
-  #             All rights reserved.
-
-  #             Redistribution and use in source and binary forms, with or without
-  #             ...
-  #   LICENSE
-  # }
-
-  # Specify the authors of the library, with email addresses. You can often find
-  # the email addresses of the authors by using the SCM log. E.g. $ git log
-  #
-  s.author       = { "mindsunbound" => "email@address.com" }
-  # s.authors      = { "mindsunbound" => "email@address.com", "other author" => "and email address" }
-  #
-  # If absolutely no email addresses are available, then you can use this form instead.
-  #
-  # s.author       = 'mindsunbound', 'other author'
-
-  # Specify the location from where the source should be retrieved.
-  #
-  s.source       = { :git => "https://github.com/mindsunbound/MUTableViewController.git", :commit => "d2435126903a5bbbeaaa01c232642d3dedb82096" }
-  # s.source       = { :svn => 'http://EXAMPLE/MUTableViewController/tags/1.0.0' }
-  # s.source       = { :hg  => 'http://EXAMPLE/MUTableViewController', :revision => '1.0.0' }
-
-  # If this Pod runs only on iOS or OS X, then specify the platform and
-  # the deployment target.
-  #
-  # s.platform     = :ios, '5.0'
-  # s.platform     = :ios
-
-  # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
-
-  # If this Pod runs on both platforms, then specify the deployment
-  # targets.
-  #
-  # s.ios.deployment_target = '5.0'
-  # s.osx.deployment_target = '10.7'
+  s.name         = 'MUTableViewController'
+  s.version      = '1.0.0'
+  s.summary      =  'MUTableViewController is a set of classes that helps separate model logic from view logic.'
+  s.authors      = {'Jonah Neugass' => 'admin@mindsunbound.com'}
+  s.homepage     = 'https://github.com/mindsunbound/MUTableViewController'
+  s.license      = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
+ # s.license            = 'Apache License, Version 2.0'
+  s.author       = { 'mindsunbound' => 'admin@mindsunbound.com'}
+  s.source       = { :git => 'https://github.com/mindsunbound/MUTableViewController.git', :commit => 'bdb72666cc5b9bf94f822dadf41aaf1d36281d43' }
+   s.platform     = :ios, '6.0'
 
   # A list of file patterns which select the source files that should be
   # added to the Pods project. If the pattern is a directory then the
@@ -93,15 +44,15 @@ Pod::Spec.new do |s|
   #
   # Also allows the use of the FileList class like `source_files' does.
   #
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  # s.resource  = 'icon.png'
+  # s.resources = 'Resources/*.png'
 
   # A list of paths to preserve after installing the Pod.
   # CocoaPods cleans by default any file that is not used.
   # Please don't include documentation, example, and test files.
   # Also allows the use of the FileList class like `source_files' does.
   #
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
+  # s.preserve_paths = 'FilesToSave', 'MoreFilesToSave'
 
   # Specify a list of frameworks that the application needs to link
   # against for this Pod to work.
@@ -115,9 +66,7 @@ Pod::Spec.new do |s|
   # s.library   = 'iconv'
   # s.libraries = 'iconv', 'xml2'
 
-  # If this Pod uses ARC, specify it like so.
-  #
-  # s.requires_arc = true
+   s.requires_arc = true
 
   # If you need to specify any other build settings, add them to the
   # xcconfig hash.

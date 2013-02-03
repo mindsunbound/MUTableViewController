@@ -15,7 +15,7 @@
     self = [super init];
     if( self != nil )
     {
-        _dictionaryQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        _dictionaryQueue = dispatch_queue_create("com.mudatamodelbase.dataqueue", NULL);
         _dataDictionary = [[NSMutableDictionary alloc] init];
         _headerDictionary = [[NSMutableDictionary alloc] init];
     }
