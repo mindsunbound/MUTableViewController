@@ -14,7 +14,7 @@
 
 @property(strong, nonatomic, readonly) NSMutableDictionary *dataDictionary;
 @property(strong, nonatomic) NSMutableDictionary *headerDictionary;
-@property(assign, nonatomic) dispatch_queue_t dictionaryQueue;
+@property(strong, nonatomic) dispatch_queue_t dictionaryQueue;
 
 @property(strong, nonatomic) MUAnonymousBlock selectionStartBlock;
 @property(strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
