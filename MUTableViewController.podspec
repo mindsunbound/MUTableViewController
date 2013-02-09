@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'MUTableViewController'
-  s.version      = '0.9.0'
+  s.version      = '0.9.1'
   s.summary      =  'MUTableViewController is a set of classes that helps separate model logic from view logic.'
   s.authors      = {'Jonah Neugass' => 'admin@mindsunbound.com'}
   s.homepage     = 'https://github.com/mindsunbound/MUTableViewController'
