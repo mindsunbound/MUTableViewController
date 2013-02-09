@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { 'mindsunbound' => 'admin@mindsunbound.com'}
   s.source       = { :git => 'https://github.com/mindsunbound/MUTableViewController.git', :tag => '0.9.0' }
   s.platform     = :ios, '6.0'
-  s.source_files = 'MUTableViewController', 'MUTableViewController/**/*.{h,m}'
+  s.source_files = 'MUTableViewController', 'MUTableViewController/Classes/*.{h,m}'
   s.requires_arc = true
   s.dependency 'AFNetworking', '~> 1.0'
 end
