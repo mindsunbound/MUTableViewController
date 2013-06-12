@@ -15,9 +15,9 @@
     self = [super init];
     if( self != nil )
     {
-        _dictionaryQueue = dispatch_queue_create("com.mudatamodelbase.dataqueue", NULL);
+        _arrayQueue = dispatch_queue_create("com.mudatamodelbase.dataqueue", NULL);
         _dataArray = [[NSMutableArray alloc] init];
-        _headerDictionary = [[NSMutableDictionary alloc] init];
+        _headerArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -26,7 +26,7 @@
 -(id)objectForRowAtIndexPath:(NSIndexPath *)inIndexPath
 {
     __block id returnObject = nil;
-    dispatch_sync(self.dictionaryQueue, ^{
+    dispatch_sync(self.arrayQueue, ^{
         NSArray *array = self.dataArray[inIndexPath.section];
         @try
         {
@@ -58,7 +58,7 @@
 {
     __block NSInteger returnCount;
         __block NSMutableArray *bArray = _dataArray;
-    dispatch_sync(self.dictionaryQueue, ^{
+    dispatch_sync(self.arrayQueue, ^{
         NSArray *array = bArray[inSection];
         returnCount = array.count;
     });
@@ -69,7 +69,7 @@
 {
     __block NSInteger returnCount;
     __block NSMutableArray *bArray = _dataArray;
-    dispatch_sync(self.dictionaryQueue, ^{
+    dispatch_sync(self.arrayQueue, ^{
         returnCount = bArray.count;
     });
     return returnCount;
@@ -79,7 +79,7 @@
 {
     __weak MUDataModelBase *bSelf = self;
     __block NSMutableArray *bArray = _dataArray;
-    dispatch_async(self.dictionaryQueue, ^{
+    dispatch_async(self.arrayQueue, ^{
         __strong MUDataModelBase *sSelf = bSelf;
         if( sSelf.dataArray == nil )
         {
@@ -94,7 +94,7 @@
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath
 {
     __weak MUDataModelBase *bSelf = self;
-    dispatch_async(self.dictionaryQueue, ^{
+    dispatch_async(self.arrayQueue, ^{
         NSMutableArray *objectArray = bSelf.dataArray[inIndexPath.section];
         [objectArray removeObjectAtIndex:inIndexPath.row];
     });
@@ -102,7 +102,7 @@
 
 -(NSString *)titleForSection:(NSInteger)inSection
 {
-    NSString *returnTitle = self.headerDictionary[@(inSection)];
+    NSString *returnTitle = self.headerArray[inSection];
     return returnTitle == nil ? EMPTY_STRING : returnTitle;
 }
 
