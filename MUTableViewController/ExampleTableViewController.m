@@ -9,6 +9,7 @@
 #import "ExampleTableViewController.h"
 #import "ExampleDataModel.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MUTableDataModel.h"
 
 @interface ExampleTableViewController ()
 
@@ -54,6 +55,11 @@
 {
     NSString *segueIdentifier = (NSString *)notification.object;
     [self performSegueWithIdentifier:segueIdentifier sender:self];
+}
+
+- (IBAction)addItem:(id)sender
+{
+    
 }
 
 @end

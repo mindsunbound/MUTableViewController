@@ -71,10 +71,30 @@
     [dataObjectArray addObject:dataObject];
     
     [parentArray addObject:dataObjectArray];
-        
+
     self.dataArray = parentArray;
 
 }
 
-
+-(void)addItemWithTitle:(NSString *)inTitle
+{
+    MUTableDataModel *dataModelObject = [[MUTableDataModel alloc] init];
+    dataModelObject.titleString = @"Red Segue";
+    dataModelObject.subtitleString = @"Perform example segue with red Color";
+    
+    MUAnonymousBlock selectionBlock = ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:PERFORM_COLOR_SEGUE_NOTIFICATION object:@"blueSegue"];
+    };
+    
+    MUTableViewDataObject *dataObject = [[MUTableViewDataObject alloc] initWithModel:dataModelObject andSelectionBlock:selectionBlock];
+    dataObject.storyBoardIdentifier = EXAMPLE_CELL_IDENTIFIER;
+   // NSMutableArray *sectionArray = self.dataArray;
+    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sectionArray.count inSection:0];
+    
+    
+    
+    dataModelObject = [[MUTableDataModel alloc] init];
+    dataModelObject.titleString = @"Blue Segue";
+    dataModelObject.subtitleString = @"Perform example segue with blue Color";
+}
 @end

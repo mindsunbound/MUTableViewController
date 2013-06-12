@@ -11,4 +11,6 @@
 
 @interface ExampleTableViewController : MUDataModelEnabledTableViewController
 
+- (IBAction)addItem:(id)sender;
+
 @end

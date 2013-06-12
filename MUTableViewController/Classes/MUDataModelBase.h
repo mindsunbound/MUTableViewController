@@ -12,17 +12,16 @@
 
 @interface MUDataModelBase : NSObject<MUTableViewDataModeling>
 
-@property(strong, nonatomic, readonly) NSMutableArray *dataArray;
-@property(strong, nonatomic) NSMutableArray *headerArray;
-@property(strong, nonatomic) dispatch_queue_t arrayQueue;
-
 @property(strong, nonatomic) MUAnonymousBlock selectionStartBlock;
 @property(strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
 @property(strong, nonatomic) MUAnonymousBlock selectionErrorBlock;
+
+@property(strong, nonatomic, readonly) NSMutableArray *deletedIndexArray;
+@property(strong, nonatomic, readonly) NSMutableArray *addedIndexArray;
 
 -(void)setDataArray:(NSMutableArray *)dataArray;
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath;
 -(NSString *)titleForSection:(NSInteger)inSection;
 -(void)dataModelUpdated;
-
+-(void)clearChangedIndexes;
 @end
