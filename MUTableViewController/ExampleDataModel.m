@@ -19,7 +19,7 @@
 
 -(void)dataModelUpdated
 {
-    NSMutableDictionary *dataObjectDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableArray *parentArray = [[NSMutableArray alloc] init];
     NSMutableArray *dataObjectArray = [[NSMutableArray alloc] init];
     
     
@@ -49,7 +49,7 @@
     
     [dataObjectArray addObject:dataObject];
     
-    dataObjectDictionary[@(0)] = dataObjectArray;
+    [parentArray addObject:dataObjectArray];
     
     dataObjectArray = [[NSMutableArray alloc] init];
     
@@ -70,9 +70,9 @@
     
     [dataObjectArray addObject:dataObject];
     
-    dataObjectDictionary[@(1)] = dataObjectArray;
+    [parentArray addObject:dataObjectArray];
         
-    self.dataDictionary = dataObjectDictionary;
+    self.dataArray = parentArray;
 
 }
 

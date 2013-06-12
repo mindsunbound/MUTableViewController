@@ -10,7 +10,7 @@
 
 @class MUDataModelBase;
 
-#define kDataModelKey @"self.dataModel.dataDictionary"
+#define kDataModelKey @"self.dataModel.dataArray"
 
 @interface MUDataModelEnabledTableViewController : UITableViewController
 {

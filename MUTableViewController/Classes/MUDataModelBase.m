@@ -16,7 +16,7 @@
     if( self != nil )
     {
         _dictionaryQueue = dispatch_queue_create("com.mudatamodelbase.dataqueue", NULL);
-        _dataDictionary = [[NSMutableDictionary alloc] init];
+        _dataArray = [[NSMutableArray alloc] init];
         _headerDictionary = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -27,7 +27,7 @@
 {
     __block id returnObject = nil;
     dispatch_sync(self.dictionaryQueue, ^{
-        NSArray *array = self.dataDictionary[@(inIndexPath.section)];
+        NSArray *array = self.dataArray[inIndexPath.section];
         @try
         {
             if( array != nil && inIndexPath.row < array.count )
@@ -57,8 +57,9 @@
 -(NSInteger)numberOfRowsInSection:(NSInteger)inSection
 {
     __block NSInteger returnCount;
+        __block NSMutableArray *bArray = _dataArray;
     dispatch_sync(self.dictionaryQueue, ^{
-        NSArray *array = self.dataDictionary[@(inSection)];
+        NSArray *array = bArray[inSection];
         returnCount = array.count;
     });
     return returnCount;
@@ -67,24 +68,26 @@
 -(NSInteger)numberOfSections
 {
     __block NSInteger returnCount;
+    __block NSMutableArray *bArray = _dataArray;
     dispatch_sync(self.dictionaryQueue, ^{
-        returnCount = [self.dataDictionary allKeys].count;
+        returnCount = bArray.count;
     });
     return returnCount;
 }
 
--(void)setDataDictionary:(NSMutableDictionary *)dataDictionary
+-(void)setDataArray:(NSMutableArray *)dataArray
 {
     __weak MUDataModelBase *bSelf = self;
+    __block NSMutableArray *bArray = _dataArray;
     dispatch_async(self.dictionaryQueue, ^{
         __strong MUDataModelBase *sSelf = bSelf;
-        if( sSelf.dataDictionary == nil )
+        if( sSelf.dataArray == nil )
         {
-            sSelf->_dataDictionary = [[NSMutableDictionary alloc] init];
+            bArray = [[NSMutableArray alloc] init];
         }
-        [self willChangeValueForKey:@"dataDictionary"];
-        [sSelf->_dataDictionary setDictionary:dataDictionary];
-        [self didChangeValueForKey:@"dataDictionary"];
+      //  [self willChangeValueForKey:@"dataArray"];
+        [sSelf.dataArray setArray:dataArray];
+      //  [self didChangeValueForKey:@"dataArray"];
     });
 }
 
@@ -92,7 +95,7 @@
 {
     __weak MUDataModelBase *bSelf = self;
     dispatch_async(self.dictionaryQueue, ^{
-        NSMutableArray *objectArray = bSelf.dataDictionary[@(inIndexPath.section)];
+        NSMutableArray *objectArray = bSelf.dataArray[inIndexPath.section];
         [objectArray removeObjectAtIndex:inIndexPath.row];
     });
 }

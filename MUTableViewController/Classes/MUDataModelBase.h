@@ -12,7 +12,7 @@
 
 @interface MUDataModelBase : NSObject<MUTableViewDataModeling>
 
-@property(strong, nonatomic, readonly) NSMutableDictionary *dataDictionary;
+@property(strong, nonatomic, readonly) NSMutableArray *dataArray;
 @property(strong, nonatomic) NSMutableDictionary *headerDictionary;
 @property(strong, nonatomic) dispatch_queue_t dictionaryQueue;
 
@@ -20,7 +20,7 @@
 @property(strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
 @property(strong, nonatomic) MUAnonymousBlock selectionErrorBlock;
 
--(void)setDataDictionary:(NSMutableDictionary *)dataDictionary;
+-(void)setDataArray:(NSMutableArray *)dataArray;
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath;
 -(NSString *)titleForSection:(NSInteger)inSection;
 -(void)dataModelUpdated;
