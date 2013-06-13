@@ -19,6 +19,7 @@
 
 -(void)dataModelUpdated
 {
+    NSLog(@"Data model updated");
     NSMutableArray *parentArray = [[NSMutableArray alloc] init];
     NSMutableArray *dataObjectArray = [[NSMutableArray alloc] init];
     

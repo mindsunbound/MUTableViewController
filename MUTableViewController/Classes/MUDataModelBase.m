@@ -109,9 +109,11 @@
 {
     @synchronized(_dataArray)
     {
+        [self willChangeValueForKey:@"dataArray"];
         NSMutableArray *objectArray = _dataArray[inIndexPath.section];
         [objectArray removeObjectAtIndex:inIndexPath.row];
         [self.deletedIndexArray addObject:inIndexPath];
+        [self didChangeValueForKey:@"dataArray"];
     };
 }
 
@@ -122,7 +124,6 @@
         [self willChangeValueForKey:@"dataArray"];
         NSMutableArray *objectArray = _dataArray[inIndexPath.section];
         [objectArray insertObject:inObject atIndex:inIndexPath.row];
-        //_dataArray[inIndexPath.section] = objectArray;
         [self.addedIndexArray addObject:inIndexPath];
         
         [self didChangeValueForKey:@"dataArray"];

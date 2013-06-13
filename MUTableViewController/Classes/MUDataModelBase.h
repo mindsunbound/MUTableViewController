@@ -26,10 +26,6 @@
 -(void)setDataArray:(NSMutableArray *)dataArray;
 -(NSMutableArray *)dataArray;
 
--(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath;
--(void)insertObjectAtIndexPath:(NSObject *)inObject atIndex:(NSIndexPath *)inIndexPath;
-
 -(NSString *)titleForSection:(NSInteger)inSection;
--(void)dataModelUpdated;
--(void)clearChangedIndexes;
+
 @end

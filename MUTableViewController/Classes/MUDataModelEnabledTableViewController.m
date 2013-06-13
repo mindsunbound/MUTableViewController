@@ -22,8 +22,36 @@
     [super viewDidLoad];
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
     [self.tableView setTableFooterView:v];
+    self.rowDeletionAnimation = UITableViewRowAnimationAutomatic;
+    self.rowInsertionAnimation = UITableViewRowAnimationAutomatic;
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"Table updated");
+    NSArray *addedIndexes = self.dataModel.addedIndexArray;
+    NSArray *deletedIndexes = self.dataModel.deletedIndexArray;
+    if( addedIndexes.count > 0 || deletedIndexes.count > 0 )
+    {
+        [self.tableView beginUpdates];
+        if( addedIndexes.count > 0 )
+        {
+            [self.tableView insertRowsAtIndexPaths:addedIndexes withRowAnimation:self.rowInsertionAnimation];
+        }
+        if( deletedIndexes.count > 0 )
+        {
+            [self.tableView deleteRowsAtIndexPaths:deletedIndexes withRowAnimation:self.rowDeletionAnimation];
+        }
+        [self.tableView endUpdates];
+        [self.dataModel clearChangedIndexes];
+        
+    }
+    else
+    {
+        [self.tableView reloadData];
+    }
+    
+}
 
 #pragma mark - Table view data source
 
@@ -102,6 +130,19 @@
     [super didReceiveMemoryWarning];
     [self removeObserverWithKeyPath:kDataModelKey];
     _dataModel = nil;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.dataModel deleteObjectAtIndexPath:indexPath];
+    }
 }
 
 -(void)dealloc

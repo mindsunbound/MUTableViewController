@@ -34,26 +34,6 @@
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    NSLog(@"Table updated");
-    //[self.tableView reloadData];
-    NSArray *addedIndexes = self.dataModel.addedIndexArray;
-    NSArray *deletedIndexes = self.dataModel.addedIndexArray;
-    if( addedIndexes.count > 0 || deletedIndexes.count > 0 )
-    {
-        [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:addedIndexes withRowAnimation:UITableViewRowAnimationLeft];
-        [self.tableView endUpdates];
-        [self.dataModel clearChangedIndexes];
-    }
-    else
-    {
-        [self.tableView reloadData];
-    }
-    
-}
-
 
 -(MUDataModelBase *)dataModel
 {
@@ -73,6 +53,10 @@
 
 - (IBAction)addItemClicked:(id)sender
 {
+    if( self.tableView.editing )
+    {
+        [self editButtonClicked:nil];
+    }
     [((ExampleDataModel *)self.dataModel)addItemNewExampleItem];
 }
 

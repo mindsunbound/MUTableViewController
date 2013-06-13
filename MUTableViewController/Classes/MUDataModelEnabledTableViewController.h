@@ -21,6 +21,9 @@
 @property(strong, nonatomic) IBOutlet UIImageView *headerImageView;
 @property(strong, nonatomic, readonly) NSMutableDictionary *subscribedKeypaths;
 
+@property(nonatomic) UITableViewRowAnimation rowInsertionAnimation;
+@property(nonatomic) UITableViewRowAnimation rowDeletionAnimation;
+
 -(void)observeWithKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options;
 
 @end

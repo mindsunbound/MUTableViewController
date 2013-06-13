@@ -13,6 +13,7 @@
 -(id)objectForRowAtIndexPath:(NSIndexPath *)inIndexPath;
 -(NSInteger)numberOfRowsInSection:(NSInteger)inSection;
 -(NSInteger)numberOfSections;
+-(void)dataModelUpdated;
 
 @optional
 
@@ -20,5 +21,8 @@
 -(id)objectForSection:(NSInteger)inSection;
 -(CGFloat)heightForRowAtIndexPath:(NSIndexPath *)inIndexPath;
 -(void)didSelectRowAtIndexPath:(NSIndexPath *)inIndexPath;
+-(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath;
+-(void)insertObjectAtIndexPath:(NSObject *)inObject atIndex:(NSIndexPath *)inIndexPath;
+-(void)clearChangedIndexes;
 
 @end
