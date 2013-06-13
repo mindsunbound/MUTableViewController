@@ -9,13 +9,9 @@
 #import "MUDataModelBase.h"
 
 @interface MUDataModelBase()
-{
-    NSMutableArray *_dataArray;
-}
 
 @property(strong, nonatomic, readonly) NSMutableArray *dataArray;
 @property(strong, nonatomic) NSMutableArray *headerArray;
-@property(strong, nonatomic) dispatch_queue_t arrayQueue;
 
 @end
 
@@ -26,7 +22,6 @@
     self = [super init];
     if( self != nil )
     {
-        _arrayQueue = dispatch_queue_create("com.mudatamodelbase.dataqueue", NULL);
         _dataArray = [[NSMutableArray alloc] init];
         _headerArray = [[NSMutableArray alloc] init];
         _deletedIndexArray = [[NSMutableArray alloc] init];
@@ -38,10 +33,11 @@
 
 -(id)objectForRowAtIndexPath:(NSIndexPath *)inIndexPath
 {
-    __block id returnObject = nil;
-    __block NSMutableArray *bDataArray = _dataArray;
-    dispatch_sync(self.arrayQueue, ^{
-        NSArray *array = bDataArray[inIndexPath.section];
+    id returnObject = nil;
+    
+    @synchronized(_dataArray)
+    {
+        NSArray *array = _dataArray[inIndexPath.section];
         @try
         {
             if( array != nil && inIndexPath.row < array.count )
@@ -54,7 +50,7 @@
             
         }
         
-    });
+    }
     return returnObject;
 }
 
@@ -70,64 +66,68 @@
 
 -(NSInteger)numberOfRowsInSection:(NSInteger)inSection
 {
-    __block NSInteger returnCount;
-    __block NSMutableArray *bArray = _dataArray;
-    dispatch_sync(self.arrayQueue, ^{
-        NSArray *array = bArray[inSection];
+    
+    NSInteger returnCount;
+    @synchronized(_dataArray)
+    {
+        NSArray *array = _dataArray[inSection];
         returnCount = array.count;
-    });
+    }
     return returnCount;
 }
 
 -(NSInteger)numberOfSections
 {
-    __block NSInteger returnCount;
-    __block NSMutableArray *bArray = _dataArray;
-    dispatch_sync(self.arrayQueue, ^{
-        returnCount = bArray.count;
-    });
+    NSInteger returnCount;
+    
+    @synchronized(_dataArray)
+    {
+        returnCount = _dataArray.count;
+    }
     return returnCount;
 }
 
 -(NSMutableArray *)dataArray
 {
-   __block NSMutableArray *bDataArray;
-    dispatch_sync(self.arrayQueue, ^{
-        bDataArray = _dataArray;
-    });
-    return bDataArray;
+    NSMutableArray *returnArray;
+    @synchronized(_dataArray)
+    {
+        returnArray = _dataArray;
+    };
+    return returnArray;
 }
 
 -(void)setDataArray:(NSMutableArray *)dataArray
 {
-    __block NSMutableArray *bArray = _dataArray;
-    dispatch_async(self.arrayQueue, ^{
-        [bArray setArray:dataArray];
-    });
+    @synchronized(_dataArray)
+    {
+        [_dataArray setArray:dataArray];
+    };
 }
 
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath
 {
-    __weak MUDataModelBase *bSelf = self;
-    __block NSMutableArray *bDeletedIndexes = self.deletedIndexArray;
-    dispatch_async(self.arrayQueue, ^{
-        __strong MUDataModelBase *sSelf = bSelf;
-        NSMutableArray *objectArray = sSelf.dataArray[inIndexPath.section];
+    @synchronized(_dataArray)
+    {
+        NSMutableArray *objectArray = _dataArray[inIndexPath.section];
         [objectArray removeObjectAtIndex:inIndexPath.row];
-        [bDeletedIndexes addObject:inIndexPath];
-    });
+        [self.deletedIndexArray addObject:inIndexPath];
+    };
 }
 
 -(void)insertObjectAtIndexPath:(NSObject *)inObject atIndex:(NSIndexPath *)inIndexPath
 {
-    __weak MUDataModelBase *bSelf = self;
-    __block NSMutableArray *bAddedIndexes = self.addedIndexArray;
-    dispatch_async(self.arrayQueue, ^{
-        __strong MUDataModelBase *sSelf = bSelf;
-        NSMutableArray *objectArray = sSelf.dataArray[inIndexPath.section];
+    @synchronized(_dataArray)
+    {
+        [self willChangeValueForKey:@"dataArray"];
+        NSMutableArray *objectArray = _dataArray[inIndexPath.section];
         [objectArray insertObject:inObject atIndex:inIndexPath.row];
-        [bAddedIndexes addObject:inIndexPath];
-    });
+        //_dataArray[inIndexPath.section] = objectArray;
+        [self.addedIndexArray addObject:inIndexPath];
+        
+        [self didChangeValueForKey:@"dataArray"];
+    }
+    
 }
 
 -(NSString *)titleForSection:(NSInteger)inSection

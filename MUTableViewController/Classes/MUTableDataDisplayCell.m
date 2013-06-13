@@ -59,7 +59,7 @@
         frame.origin.y = yOffset;
         [self.countBadge setFrame:frame];
         
-        [self addSubview:self.countBadge];
+        [self.contentView addSubview:self.countBadge];
     }
 }
 

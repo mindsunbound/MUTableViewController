@@ -12,4 +12,6 @@
 
 @interface ExampleDataModel : MUDataModelBase
 
+-(void)addItemNewExampleItem;
+
 @end

@@ -76,7 +76,7 @@
 
 }
 
--(void)addItemWithTitle:(NSString *)inTitle
+-(void)addItemNewExampleItem
 {
     MUTableDataModel *dataModelObject = [[MUTableDataModel alloc] init];
     dataModelObject.titleString = @"Red Segue";
@@ -88,13 +88,14 @@
     
     MUTableViewDataObject *dataObject = [[MUTableViewDataObject alloc] initWithModel:dataModelObject andSelectionBlock:selectionBlock];
     dataObject.storyBoardIdentifier = EXAMPLE_CELL_IDENTIFIER;
-   // NSMutableArray *sectionArray = self.dataArray;
-    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sectionArray.count inSection:0];
-    
-    
-    
+    NSMutableArray *sectionArray = self.dataArray[0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sectionArray.count inSection:0];
+        
     dataModelObject = [[MUTableDataModel alloc] init];
     dataModelObject.titleString = @"Blue Segue";
     dataModelObject.subtitleString = @"Perform example segue with blue Color";
+    dataObject.modelObject = dataModelObject;
+    
+    [self insertObjectAtIndexPath:dataObject atIndex:indexPath];
 }
 @end

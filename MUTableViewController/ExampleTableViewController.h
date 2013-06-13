@@ -11,6 +11,9 @@
 
 @interface ExampleTableViewController : MUDataModelEnabledTableViewController
 
-- (IBAction)addItem:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
+- (IBAction)addItemClicked:(id)sender;
+- (IBAction)editButtonClicked:(id)sender;
 
 @end

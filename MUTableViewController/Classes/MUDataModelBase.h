@@ -11,6 +11,10 @@
 #import "MUDefines.h"
 
 @interface MUDataModelBase : NSObject<MUTableViewDataModeling>
+{
+     NSMutableArray *_dataArray;   
+}
+
 
 @property(strong, nonatomic) MUAnonymousBlock selectionStartBlock;
 @property(strong, nonatomic) MUAnonymousBlock selectionCompleteBlock;
@@ -20,7 +24,11 @@
 @property(strong, nonatomic, readonly) NSMutableArray *addedIndexArray;
 
 -(void)setDataArray:(NSMutableArray *)dataArray;
+-(NSMutableArray *)dataArray;
+
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)inIndexPath;
+-(void)insertObjectAtIndexPath:(NSObject *)inObject atIndex:(NSIndexPath *)inIndexPath;
+
 -(NSString *)titleForSection:(NSInteger)inSection;
 -(void)dataModelUpdated;
 -(void)clearChangedIndexes;

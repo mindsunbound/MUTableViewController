@@ -26,7 +26,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-        
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWelcomeLabel) name:@"autoLoginSuccessful" object:nil];
     if([self.dataModel respondsToSelector:@selector(dataModelUpdated)] )
     {
@@ -37,7 +37,21 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     NSLog(@"Table updated");
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
+    NSArray *addedIndexes = self.dataModel.addedIndexArray;
+    NSArray *deletedIndexes = self.dataModel.addedIndexArray;
+    if( addedIndexes.count > 0 || deletedIndexes.count > 0 )
+    {
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths:addedIndexes withRowAnimation:UITableViewRowAnimationLeft];
+        [self.tableView endUpdates];
+        [self.dataModel clearChangedIndexes];
+    }
+    else
+    {
+        [self.tableView reloadData];
+    }
+    
 }
 
 
@@ -57,9 +71,18 @@
     [self performSegueWithIdentifier:segueIdentifier sender:self];
 }
 
-- (IBAction)addItem:(id)sender
+- (IBAction)addItemClicked:(id)sender
 {
+    [((ExampleDataModel *)self.dataModel)addItemNewExampleItem];
+}
+
+- (IBAction)editButtonClicked:(id)sender
+{
+    NSString *title = [self.editButton.title isEqualToString:@"Edit"] ? @"Done" : @"Edit";
+    self.editButton.title = title;
+    self.tableView.editing = !self.tableView.editing;
     
 }
+
 
 @end
